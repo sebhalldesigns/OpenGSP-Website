@@ -17,12 +17,25 @@
     <div class="NavigationBar">
         <img class="NavigationIcon" src="Media/Favicon.png" draggable="false">
        OpenGSP
-        <div class="NavigationMenu">
-            <a class="NavigationItem" href="/">Home</a>
-            <a class="NavigationItem" href="https://github.com/sebhalldesigns/GSP">GitHub</a>
+        <div class="NavigationMenu" id="NavigationMenu">
+			
+				
+				
+            	<a class="NavigationItem" href="index.html">Home</a>
+          	  	<a class="NavigationItem" href="https://github.com/sebhalldesigns/GSP">GitHub</a>
+			
+			
         </div>
+		<div class="NavigationMenuControls">
+			<button class="NavigationShowButton" id="NavigationShowButton" onclick="ShowMenu()">
+				<img src="Media/Burger.svg" class="NavigationButtonImage"/>
+			</button>
+			<button class="NavigationHideButton" id="NavigationHideButton" onclick="HideMenu()">
+				<img src="Media/Close.svg" class="NavigationButtonImage"/>
+			</button>
+		</div>
     </div>
-
+		
 
 
     <div class="MainContent">
@@ -36,5 +49,19 @@
         OpenGSP, a project by Seb Hall
 
     </div>
+	
+	<script>
+		
+		
+		function ShowMenu() {	
+			var rootVars = document.querySelector(":root");
+			rootVars.style.setProperty("--navigationMenuVisibility", "visible");	
+		}
+		
+		function HideMenu() {	
+			var rootVars = document.querySelector(":root");
+			rootVars.style.setProperty("--navigationMenuVisibility", "hidden");	
+		}
+	</script>
 </body>
 </html>

@@ -3,6 +3,8 @@
     --text-color: black;
     --menu-background-color: #F0F0F0;
     --page-background-color: #F5F5F5;
+	
+	--navigationMenuVisibility: hidden;
 }
 
 @media (prefers-color-scheme: dark) { 
@@ -32,6 +34,7 @@ body {
     top: 0pt;
     left: 0pt;
     right: 0pt;
+	
 
     box-sizing: border-box;
 
@@ -43,10 +46,12 @@ body {
     user-select: none;
 }
 
+
+
 .NavigationItem {
     text-decoration: none;
     color: #808080;
-    font-size: 16pt;
+    font-size: 25pt;
 }
 
 .NavigationItem:hover {
@@ -65,12 +70,59 @@ body {
 
 
 .NavigationMenu {
+	visibility: var(--navigationMenuVisibility);
+	display: flex;
+	flex-direction: column;
+    position: absolute;
+    top: 50pt;
+    right: 0pt;
+	left: 0pt;
+    bottom: 0pt;
+	height: 100vh;
+	z-index: 100;
+    padding-top: 10pt;
+	padding-left: 20pt;
+    padding-right: 20pt;
+	background-color: var(--menu-background-color);
+}
+
+.NavigationMenuControls {
     position: absolute;
     top: 0pt;
     right: 0pt;
-    height: 40pt;
-    padding-top: 12.5pt;
-    padding-right: 20pt;
+	width: 50pt;
+    height: 50pt;
+	z-index: 101;
+    padding-top: 0pt;
+    padding-right: 0pt;
+}
+
+.NavigationShowButton {
+	position: absolute;
+	top: 5pt;
+	right: 5pt;
+	width: 40pt;
+	height: 40pt;
+	background-color: var(--menu-background-color);
+	border-color: transparent;
+	padding: 5pt;
+}
+
+.NavigationHideButton {
+	visibility: var(--navigationMenuVisibility);
+	position: absolute;
+	top: 5pt;
+	right: 5pt;
+	width: 40pt;
+	height: 40pt;
+	background-color: var(--menu-background-color);
+	border-color: transparent;
+	padding: 5pt;
+}
+
+.NavigationButtonImage {
+	width: 30pt;
+	height: 30pt;
 }
 
 .MainContent {
@@ -83,7 +135,6 @@ body {
     color: var(--text-color);
     background-color: var(--page-background-color);
     min-height: 100vh;
-
 }
 
 .Footer {
@@ -103,4 +154,40 @@ body {
         width: 750pt;
         margin-left: calc(50% - 375pt);
     }
+	
+	
+
   }
+  
+  
+@media only screen and (min-width: 500px) {
+	
+	.NavigationMenu {
+		visibility: visible;
+	    position: absolute;
+	    top: 0pt;
+	    right: 0pt;
+		left: 160pt;
+	    height: 38pt;
+	    padding-top: 12.5pt;
+	    padding-right: 20pt;
+		display: block;
+	}
+	
+		
+	.NavigationItem {
+	    font-size: 16pt;
+	}
+	
+	.NavigationMenuControls { 
+		visibility: hidden;
+	}
+	
+	.NavigationShowButton {
+		visibility: hidden;
+	}
+	
+	.NavigationHideButton {
+		visibility: hidden;
+	}
+}
