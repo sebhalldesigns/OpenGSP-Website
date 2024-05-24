@@ -3,7 +3,7 @@
     --text-color: black;
     --menu-background-color: #F0F0F0;
     --page-background-color: #F5F5F5;
-	
+	--black-image-invert: 0;
 	--navigationMenuVisibility: hidden;
 }
 
@@ -13,16 +13,19 @@
         --text-color: white;
         --menu-background-color: #202020;
         --page-background-color: #151515;
+		--black-image-invert: 1;
     }
 }
 
 body {
     background-color: var(--background-color);
     font-family: "Inter", sans-serif;
+	font-size: 11pt;
     padding: 0pt;
     margin: 0pt;
     overflow-x: hidden;
     color: var(--text-color);
+	
 }
 
 .NavigationBar {
@@ -52,6 +55,10 @@ body {
     text-decoration: none;
     color: #808080;
     font-size: 25pt;
+	margin-left: 5pt;
+	margin-right: 5pt;
+	margin-top: 5pt;
+	margin-bottom: 5pt;
 }
 
 .NavigationItem:hover {
@@ -123,13 +130,15 @@ body {
 .NavigationButtonImage {
 	width: 30pt;
 	height: 30pt;
+	-webkit-filter: invert(var(--black-image-invert));
+	filter: invert(var(--black-image-invert));
 }
 
 .MainContent {
     display: block;
-    margin-top: 25pt;
-    margin-left: 25pt;
-    margin-right: 25pt;
+    margin-top: 5pt;
+    margin-left: 5pt;
+    margin-right: 5pt;
     padding: 25pt;
     border-radius: 10pt;
     color: var(--text-color);
@@ -139,7 +148,7 @@ body {
 
 .Footer {
     display: block;
-    margin-top: 25pt;
+    margin-top: 5pt;
     color: var(--text-color);
     margin-left: 0pt;
     margin-right: 0pt;
@@ -160,14 +169,14 @@ body {
   }
   
   
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 750px) {
 	
 	.NavigationMenu {
 		visibility: visible;
 	    position: absolute;
 	    top: 0pt;
 	    right: 0pt;
-		left: 160pt;
+		left: 175pt;
 	    height: 38pt;
 	    padding-top: 12.5pt;
 	    padding-right: 20pt;
